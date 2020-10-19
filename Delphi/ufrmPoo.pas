@@ -9,6 +9,8 @@ uses
 type
   TfrmPoo = class(TForm)
     Button1: TButton;
+    Button2: TButton;
+    ListBox1: TListBox;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -37,7 +39,8 @@ begin
   Desconto := TFuncoes.Create;
 
   try
-    ShowMessage(Desconto.AplicaDesconto(50,3,'%'));
+    //ShowMessage(Desconto.AplicaDesconto(50,3,0));
+    ShowMessage(FloatToStr(Desconto.JurosComposto(1000,10,12)));
   finally
     Cliente.Free;
     Fornecedor.Free;
